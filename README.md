@@ -1,8 +1,8 @@
-framework : CodeIgniter 4
+framework : CodeIgniter 4  
 frontend  : bootstrap
 
-username admin : admin@admin.com
+username admin : admin@admin.com  
 password admin : katasandi
 
-auth menggunakan myth/auth
+auth menggunakan myth/auth  
 form masukan mengguanakn formsfree 
