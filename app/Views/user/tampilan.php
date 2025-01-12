@@ -166,7 +166,7 @@
                                                 <?php
                                                 $totalBelanja = 0; // Variabel untuk menghitung total belanja
                                                 foreach ($keranjang as $index => $cartItem):
-                                                    $totalBelanja += $cartItem['harga'] * $cartItem['jumlah']; // Mengakumulasi total belanja
+                                                    $totalBelanja += $cartItem['harga']; // Mengakumulasi total belanja
                                                     ?>
                                                     <tr>
                                                         <td><?= $index + 1 ?></td>
@@ -202,7 +202,7 @@
                                             <button type="submit" class="btn btn-primary">Checkout</button>
                                         </form>
                                         <br>
-                                        <a href="<?= base_url('toko/payment'); ?>">transfer</a>
+
 
                                     </div>
                                 <?php else: ?>
@@ -323,56 +323,64 @@
             <hr>
 
             <div class="container-fluid" style="background-color: #343a40;">
-    <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4" style="color: white;  padding-top: 20px;"><span class="">Contact Us</span></h2>
-    <div class="row px-xl-5">
-        <div class="col-lg-7 mb-5">
-            <div class="contact-form text-white p-30" style="background-color: #343a40;">
-                <div id="success"></div>
-                <form action="<?= base_url('/toko') ?>" method="POST">
-                    <?= csrf_field() ?>
-                    <div class="control-group bg-dark">
-                        <input type="text" class="form-control text-white" name="name" placeholder="Your Name" required="required" />
+                <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"
+                    style="color: white;  padding-top: 20px;"><span class="">Contact Us</span></h2>
+                <div class="row px-xl-5">
+                    <div class="col-lg-7 mb-5">
+                        <div class="contact-form text-white p-30" style="background-color: #343a40;">
+                            <div id="success"></div>
+                            <form action="<?= base_url('/toko') ?>" method="POST">
+                                <?= csrf_field() ?>
+                                <div class="control-group bg-dark">
+                                    <input type="text" class="form-control text-white" name="name"
+                                        placeholder="Your Name" required="required" />
+                                </div>
+                                <hr>
+                                <div class="control-group">
+                                    <input type="email" class="form-control text-white" name="email"
+                                        placeholder="Your Email" required="required" />
+                                </div>
+                                <hr>
+                                <div class="control-group">
+                                    <textarea class="form-control " rows="8" name="message" placeholder="Message"
+                                        required="required"></textarea>
+                                </div>
+                                <hr>
+                                <div style="background-color: #343a40;">
+                                    <button class="btn btn-primary py-2 px-4" type="submit">Kirim Masukan</button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
-                    <hr>
-                    <div class="control-group">
-                        <input type="email" class="form-control text-white" name="email" placeholder="Your Email" required="required" />
+                    <div class="col-lg-5 mb-5">
+                        <div class="text-white p-30 mb-30" style="background-color: #343a40;">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58214.410592960194!2d113.70290562002589!3d-6.910382273665611!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd9c215610a5899%3A0xeed0b93792f94b09!2sKec.%20Ambunten%2C%20Kabupaten%20Sumenep%2C%20Jawa%20Timur!5e0!3m2!1sid!2sid!4v1736525957808!5m2!1sid!2sid"
+                                width="450" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            <div class="p-30 mb-3" style="background-color: #343a40;">
+                                <p class="mb-2 text-white"><i
+                                        class="fa fa-map-marker-alt text-primary mr-3"></i>Ambunten</p>
+                                <p class="mb-2 text-white"><i
+                                        class="fa fa-envelope text-primary mr-3"></i>Taufkurrahmadi@gmail.com</p>
+                                <p class="mb-2 text-white"><i class="fa fa-phone-alt text-primary mr-3"></i>081906110555
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                    <hr>
-                    <div class="control-group">
-                        <textarea class="form-control text-white" rows="8" name="message" placeholder="Message" required="required"></textarea>
-                    </div>
-                    <div style="background-color: #343a40;"> 
-                        <button class="btn btn-primary py-2 px-4" type="submit">Kirim Masukan</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-        <div class="col-lg-5 mb-5">
-            <div class="text-white p-30 mb-30" style="background-color: #343a40;">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58214.410592960194!2d113.70290562002589!3d-6.910382273665611!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd9c215610a5899%3A0xeed0b93792f94b09!2sKec.%20Ambunten%2C%20Kabupaten%20Sumenep%2C%20Jawa%20Timur!5e0!3m2!1sid!2sid!4v1736525957808!5m2!1sid!2sid"
-                    width="450" height="300" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
-                <div class="p-30 mb-3" style="background-color: #343a40;">
-                    <p class="mb-2 text-white"><i class="fa fa-map-marker-alt text-primary mr-3"></i>Ambunten</p>
-                    <p class="mb-2 text-white"><i class="fa fa-envelope text-primary mr-3"></i>Taufkurrahmadi@gmail.com</p>
-                    <p class="mb-2 text-white"><i class="fa fa-phone-alt text-primary mr-3"></i>081906110555</p>
                 </div>
-            </div>
-        </div>
-    </div>
 
-    <!-- Footer -->
-    <footer class="sticky-footer " style="background-color: #343a40;">
-        <div class="container my-auto">
-            <div class="copyright text-center my-auto  text-white">
-                <span>Taufikshop Copyright &copy; 2025</span>
-            </div>
-        </div>
-    </footer>
-    <!-- End of Footer -->
+                <!-- Footer -->
+                <footer class="sticky-footer " style="background-color: #343a40;">
+                    <div class="container my-auto">
+                        <div class="copyright text-center my-auto  text-white">
+                            <span>Taufikshop Copyright &copy; 2025</span>
+                        </div>
+                    </div>
+                </footer>
+                <!-- End of Footer -->
 
-</div>
+            </div>
 
             <!-- End of Content Wrapper -->
 

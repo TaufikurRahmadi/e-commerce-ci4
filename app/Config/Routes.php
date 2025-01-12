@@ -48,6 +48,7 @@ $routes->get('/toko/admin', 'toko::admin', ['filter' => 'role:admin']);
 $routes->get('/toko/admin/barang', 'toko::barang', ['filter' => 'role:admin']);
 $routes->get('/toko/admin/create', 'Toko::create', ['filter' => 'role:admin']);
 $routes->post('/toko/admin/store', 'Toko::store',['filter' => 'role:admin']);
+$routes->get('/toko/admin/edit/(:num)', 'Toko::update/$1',['filter' => 'role:admin']);
 $routes->post('/toko/edit/update/(:num)', 'Toko::update/$1',['filter' => 'role:admin']);
 $routes->delete('/toko/delete/(:num)', 'Toko::delete/$1',['filter' => 'role:admin']);
 
